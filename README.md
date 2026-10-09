@@ -1,5 +1,7 @@
 # RateCraft
 
+**Live:** https://ratecraft-calc.vercel.app
+
 What should you charge per hour? Enter your real numbers and get a rate built on math, not gut feel.
 
 ![RateCraft screenshot](demo/screenshot.png)
