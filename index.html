@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RateCraft — Freelancer Rate Calculator</title>
+<meta name="description" content="Work out the hourly rate you should actually charge: income goal, expenses, taxes, time off, and platform fees, done right.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <p class="brand">RateCraft</p>
+  <p class="tagline">Charge what the work is worth.</p>
+</header>
+<main>
+  <section class="intro">
+    <h1>What should you charge per hour?</h1>
+    <p class="lede">Most freelancers pick a number that feels safe and undercharge for years. Enter your real numbers and get a rate built on math, not gut feel. Everything runs in your browser. Nothing is sent anywhere.</p>
+  </section>
+  <div class="calc-grid">
+    <section class="inputs" aria-label="Your numbers">
+      <h2>Your numbers</h2>
+      <div class="field">
+        <label for="currency">Currency</label>
+        <select id="currency">
+          <option value="₹" selected>₹ INR</option>
+          <option value="$">$ USD</option>
+          <option value="€">€ EUR</option>
+          <option value="£">£ GBP</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="goal">Yearly income you want to take home</label>
+        <input id="goal" type="number" min="0" step="1000" value="1200000" inputmode="numeric">
+      </div>
+      <div class="field">
+        <label for="hours">Billable hours per week <output id="hoursOut" for="hours">30</output></label>
+        <input id="hours" type="range" min="5" max="60" step="1" value="30">
+      </div>
+      <div class="field">
+        <label for="weeksOff">Weeks off per year <output id="weeksOffOut" for="weeksOff">4</output></label>
+        <input id="weeksOff" type="range" min="0" max="12" step="1" value="4">
+      </div>
+      <div class="field">
+        <label for="expenses">Yearly business expenses</label>
+        <input id="expenses" type="number" min="0" step="1000" value="120000" inputmode="numeric">
+        <p class="hint">Software, hardware, internet, coworking, accounting.</p>
+      </div>
+      <div class="field">
+        <label for="tax">Effective tax rate <output id="taxOut" for="tax">20%</output></label>
+        <input id="tax" type="range" min="0" max="50" step="1" value="20">
+      </div>
+      <div class="field">
+        <label for="fee">Platform fee <output id="feeOut" for="fee">10%</output></label>
+        <input id="fee" type="range" min="0" max="30" step="1" value="10">
+        <p class="hint">Freelancer.com takes 10%. Upwork slides 5–10%.</p>
+      </div>
+    </section>
+    <section class="results" aria-label="Your rate" aria-live="polite">
+      <h2>Your rate</h2>
+      <p class="rate-label">Charge at least</p>
+      <p class="rate"><span id="hourly">₹0</span><span class="per">/hour</span></p>
+      <dl class="breakdown">
+        <div><dt>Day rate (8h)</dt><dd id="dayRate">–</dd></div>
+        <div><dt>Monthly at this rate</dt><dd id="monthly">–</dd></div>
+        <div><dt>Billable hours / year</dt><dd id="billable">–</dd></div>
+        <div><dt>Revenue needed / year</dt><dd id="revenue">–</dd></div>
+      </dl>
+      <details class="math">
+        <summary>How this is calculated</summary>
+        <ol>
+          <li>Add your take-home goal and business expenses.</li>
+          <li>Gross it up for tax: divide by (1 − tax rate).</li>
+          <li>Divide by billable hours per year: weekly hours × (52 − weeks off).</li>
+          <li>Gross up once more for the platform fee, so the cut comes out of the client's pocket, not yours.</li>
+        </ol>
+      </details>
+    </section>
+  </div>
+</main>
+<footer><p>RateCraft · Math, not gut feel.</p></footer>
+<script src="app.js"></script>
+</body>
+</html>

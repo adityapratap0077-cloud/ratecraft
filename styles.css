@@ -1,0 +1,75 @@
+:root {
+  --paper: #FAF6EF;
+  --card: #FFFFFF;
+  --ink: #2B2118;
+  --muted: #6B5D4F;
+  --accent: #B3541E;
+  --accent-dark: #8F4215;
+  --line: #E5DCCB;
+}
+* { box-sizing: border-box; margin: 0; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+}
+.site-header {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 1.25rem 2rem; border-bottom: 1px solid var(--line);
+  max-width: 72rem; margin: 0 auto;
+}
+.brand { font-family: Georgia, "Times New Roman", serif; font-size: 1.4rem; font-weight: 700; }
+.tagline { color: var(--muted); font-size: 1rem; }
+main { max-width: 72rem; margin: 0 auto; padding: 0 2rem; }
+.intro { padding: 4rem 0 3rem; max-width: 44rem; }
+h1 { font-family: Georgia, "Times New Roman", serif; font-size: 2.8rem; line-height: 1.15; margin-bottom: 1rem; }
+.lede { font-size: 1.15rem; color: var(--muted); }
+.calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; padding-bottom: 4rem; align-items: start; }
+.inputs, .results {
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: 12px; padding: 2rem;
+}
+.inputs h2, .results h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.5rem; margin-bottom: 1.5rem;
+}
+.field { margin-bottom: 1.4rem; }
+.field label { display: block; font-weight: 600; margin-bottom: 0.4rem; font-size: 1rem; }
+.field label output { color: var(--accent); font-weight: 700; margin-left: 0.35rem; }
+.field input[type="number"], .field select {
+  width: 100%; padding: 0.7rem 0.9rem; font-size: 1.05rem;
+  border: 1px solid var(--line); border-radius: 8px;
+  background: var(--paper); color: var(--ink); font-family: inherit;
+}
+.field input[type="range"] { width: 100%; accent-color: var(--accent); }
+.hint { font-size: 0.9rem; color: var(--muted); margin-top: 0.35rem; }
+.results { position: sticky; top: 1.5rem; }
+.rate-label { color: var(--muted); font-size: 1rem; }
+.rate {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 3.4rem; font-weight: 700; color: var(--accent-dark);
+  line-height: 1.1; margin: 0.25rem 0 1.5rem;
+}
+.rate .per { font-size: 1.3rem; color: var(--muted); font-weight: 400; }
+.breakdown { border-top: 1px solid var(--line); }
+.breakdown div {
+  display: flex; justify-content: space-between; gap: 1rem;
+  padding: 0.8rem 0; border-bottom: 1px solid var(--line);
+}
+.breakdown dt { color: var(--muted); }
+.breakdown dd { font-weight: 700; margin: 0; text-align: right; }
+.math { margin-top: 1.5rem; }
+.math summary { cursor: pointer; font-weight: 600; color: var(--accent-dark); }
+.math ol { margin: 0.75rem 0 0 1.25rem; color: var(--muted); font-size: 0.98rem; }
+.math li { margin-bottom: 0.4rem; }
+footer { text-align: center; padding: 2.5rem; color: var(--muted); font-size: 0.95rem; border-top: 1px solid var(--line); }
+@media (max-width: 800px) {
+  .calc-grid { grid-template-columns: 1fr; }
+  .results { position: static; }
+  h1 { font-size: 2rem; }
+  .rate { font-size: 2.6rem; }
+  main { padding: 0 1.25rem; }
+  .intro { padding: 2.5rem 0 2rem; }
+}
