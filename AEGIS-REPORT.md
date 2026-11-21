@@ -1,4 +1,4 @@
-# Aegis audit report — RateCraft (freelancer rate calculator)
+# Aegis audit report: RateCraft (freelancer rate calculator)
 
 **Scanned:** ~/workspace/freelancer-rate-calculator (index.html, styles.css, app.js)
 **Date:** 2026-10-09
@@ -8,8 +8,8 @@
 | Scanner | Result |
 |---|---|
 | semgrep (project rules: DOM XSS, eval) | 0 findings |
-| npm audit | skipped — no package.json (no dependencies, nothing to audit) |
-| pa11y | not installed in this environment — incomplete coverage, rerun where installed |
+| npm audit | skipped, no package.json (no dependencies, nothing to audit) |
+| pa11y | not installed in this environment, incomplete coverage, rerun where installed |
 
 ## Manual checks (reproducible)
 
